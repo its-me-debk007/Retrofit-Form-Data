@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -22,7 +24,7 @@ android {
         def localProperties = new Properties()
         localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 
-//        buildConfigField "String", "API_KEY", localProperties['API_KEY']
+        buildConfigField "String", "BASE_URL", localProperties['BASE_URL']
     }
 
     buildTypes {
@@ -73,4 +75,12 @@ dependencies {
     // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    // Dagger Hilt
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt 'com.google.dagger:hilt-android-compiler:2.44'
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+}
+
+kapt {
+    correctErrorTypes = true
 }
