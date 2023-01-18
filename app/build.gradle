@@ -26,6 +26,7 @@ android {
 
         buildConfigField "String", "BASE_URL", localProperties['BASE_URL']
         buildConfigField "String", "API_KEY", localProperties['API_KEY']
+        buildConfigField "String", "API_SECRET", localProperties['API_SECRET']
     }
 
     buildTypes {
