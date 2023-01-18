@@ -5,7 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import data.form.retrofit.domain.repository.Repository
-import data.form.retrofit.domain.use_case.UseCase
+import data.form.retrofit.domain.use_case.UploadImageUseCase
 import javax.inject.Singleton
 
 @Module
@@ -14,5 +14,5 @@ object DomainModule {
 
     @Provides
     @Singleton
-    fun provideUseCase(repository: Repository): UseCase = UseCase(repository)
+    fun provideUseCase(repository: Repository): UploadImageUseCase = UploadImageUseCase(repository)
 }

@@ -16,6 +16,8 @@ import javax.inject.Singleton
 @Module
 object DataModule {
 
+    @Provides
+    @Singleton
     fun provideApiService(): ApiService = Retrofit.Builder()
         .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(MoshiConverterFactory.create())
